@@ -205,3 +205,7 @@ General caution: 0.000
 End of all speed and passing limits: 0.000 
 Right-of-way at the next intersection: 0.000 
 ```
+
+## References
+[Converting Images to Grayscale](https://www.science-emergence.com/Articles/How-to-convert-an-image-to-grayscale-using-python-/)
+- https://markbroerkens.github.io/CarND-Traffic-Sign-Classifier-Project/
