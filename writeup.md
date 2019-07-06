@@ -166,7 +166,7 @@ The model was able to predict with 100% confidence as well because the features 
 
 The model was able to predict with  83% confidence, the second predicted class traffic signals is also correct because the image has some part of a traffic signal, no overfiting here the model behaves really good 
 
-4. Go straight or left
+4. Speed limit (30km/h)
 
 The model wrongly predicted Speed limit (50km/h) with an 80% confidence due to the similarity in the signs, it is also possible that the dataset has more Speed limit (50km/h) than Speed limit (30km/h). The good thing is that the model predicts Speed limit (30km/h) in second place, and other speed limits are in 4th and 5th place. 
 
