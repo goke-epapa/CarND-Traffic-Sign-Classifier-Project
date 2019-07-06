@@ -111,9 +111,9 @@ Optimiser: Adam Optimiser
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of 0.991
-* validation set accuracy of 0.946 
-* test set accuracy of 0.931
+* training set accuracy of 0.994
+* validation set accuracy of 0.954 
+* test set accuracy of 0.943
 
 If a well known architecture was chosen:
 * What architecture was chosen?
@@ -134,7 +134,7 @@ I believed it will be relevant because it had been used to classify handwritten 
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are five German traffic signs that I found on the web:
+Here are five German traffic signs that I found on from street maps: https://mapstreetview.com/
 
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
@@ -145,65 +145,79 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Wild Animals Crossing	| Wild Animals Crossing							|
-| Pedestrians	      	| General caution					 			|
-| Stop       		    | Stop   							            | 
-| Slippery Road         | Beware of ice/snow 							|
-| Traffic signs			| Traffic signs      							|
+| Go straight or left	| Go straight or left   						|
+| Bumpy road	      	| Bumpy road    					 			|
+| Yield       		    | Yield   							            | 
+| Speed limit (30km/h)  | Speed limit (50km/h)                          |
+| Go straight or right	| Go straight or right      					|
 
 
-The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 60%. This is rather low compared to the accuracy on the test set of 93%, so there is an indication of over fitting.
+The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 80%. This is rather low compared to the accuracy on the test set of 93%, so there is an indication of over fitting.
+
+1. Go straight or left
+The model was able to predict with 100% confidence because the image looks quite similar to those from the test set, however it could be a sign of overfitting
+
+2. Bumpy road
+The model was able to predict with 100% confidence as well because the features of the image are quite similar to that of the test dataset, however it could be a sign of overfitting
+
+3. Yield
+The model was able to predict with  83% confidence, the second predicted class traffic signals is also correct because the image has some part of a traffic signal, no overfiting here the model behaves really good 
+
+4. Go straight or left
+The model wrongly predicted Speed limit (50km/h) with an 80% confidence due to the similarity in the signs, it is also possible that the dataset has more Speed limit (50km/h) than Speed limit (30km/h). The good thing is that the model predicts Speed limit (30km/h) in second place, and other speed limits are in 4th and 5th place. 
+
+5. Go straight or right
+The model was able to predict with 100% confidence because the image looks quite similar to those from the test set, however it could be a sign of overfitting
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
-
-For the first image (Wild Animals Crossing), the top five soft max probabilities were:
+For the first image (Go straight or left), the top five soft max probabilities were:
 
 ```
-Wild animals crossing: 0.920 
-Double curve: 0.079 
-Slippery road: 0.000 
-Traffic signals: 0.000 
-Pedestrians: 0.000 
-```
-
-For the second image (Pedestrians), the top five soft max probabilities were:
-
-```
-General caution: 0.490 
-Road work: 0.354 
-Right-of-way at the next intersection: 0.139 
-Pedestrians: 0.017 
-Children crossing: 0.000 
-```
-
-For the third image (Stop), the top five soft max probabilities were:
-
-```
-Stop: 0.753 
-Turn left ahead: 0.188 
-Speed limit (60km/h): 0.053 
-General caution: 0.006 
-Right-of-way at the next intersection: 0.000 
-```
-
-For the fourth image (Slippery road), the top five soft max probabilities were:
-```
-Beware of ice/snow: 0.746 
-Slippery road: 0.254 
+Go straight or left: 1.000 
 Turn left ahead: 0.000 
-Bicycles crossing: 0.000 
-End of no passing: 0.000 
+Keep left: 0.000 
+Ahead only: 0.000 
+Dangerous curve to the right: 0.000 
+
 ```
 
-For the fifth image (Traffic signs), the top five soft max probabilities were:
+For the second image (Bumpy road), the top five soft max probabilities were:
 ```
-Traffic signals: 1.000 
-Speed limit (60km/h): 0.000 
+Bumpy road: 1.000 
+Bicycles crossing: 0.000 
+Children crossing: 0.000 
+Slippery road: 0.000 
+Beware of ice/snow: 0.000  
+```
+
+For the second image (Yield), the top five soft max probabilities were:
+
+```
+Yield: 0.838 
+Traffic signals: 0.158 
+Priority road: 0.004 
 General caution: 0.000 
-End of all speed and passing limits: 0.000 
-Right-of-way at the next intersection: 0.000 
+Speed limit (80km/h): 0.000 
+```
+
+For the fourth image (Speed limit (30km/h)), the top five soft max probabilities were:
+
+```
+Speed limit (50km/h): 0.807 
+Speed limit (30km/h): 0.129 
+Wild animals crossing: 0.040 
+Speed limit (80km/h): 0.017 
+Speed limit (60km/h): 0.002 
+```
+
+For the fifth image (Go straight or right), the top five soft max probabilities were:
+```
+Go straight or right: 1.000 
+Dangerous curve to the right: 0.000 
+Keep right: 0.000 
+Road work: 0.000 
+End of speed limit (80km/h): 0.000
 ```
 
 ## References
