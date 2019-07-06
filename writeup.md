@@ -155,18 +155,23 @@ Here are the results of the prediction:
 The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 80%. This is rather low compared to the accuracy on the test set of 93%, so there is an indication of over fitting.
 
 1. Go straight or left
+
 The model was able to predict with 100% confidence because the image looks quite similar to those from the test set, however it could be a sign of overfitting
 
 2. Bumpy road
+
 The model was able to predict with 100% confidence as well because the features of the image are quite similar to that of the test dataset, however it could be a sign of overfitting
 
 3. Yield
+
 The model was able to predict with  83% confidence, the second predicted class traffic signals is also correct because the image has some part of a traffic signal, no overfiting here the model behaves really good 
 
 4. Go straight or left
+
 The model wrongly predicted Speed limit (50km/h) with an 80% confidence due to the similarity in the signs, it is also possible that the dataset has more Speed limit (50km/h) than Speed limit (30km/h). The good thing is that the model predicts Speed limit (30km/h) in second place, and other speed limits are in 4th and 5th place. 
 
 5. Go straight or right
+
 The model was able to predict with 100% confidence because the image looks quite similar to those from the test set, however it could be a sign of overfitting
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
